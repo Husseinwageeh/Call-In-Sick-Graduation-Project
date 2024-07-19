@@ -1,0 +1,26 @@
+
+<div class="parent">
+  <app-nav-bar></app-nav-bar>
+
+  <h1 class="main-title text-center mt-5">Choose Your Sickness Call</h1>
+  <div class="container d-flex justify-content-center">
+  <div class="options mb-5 d-flex flex-column justify-content-center">
+  
+    <div *ngFor="let sickness of sicknessList">
+
+      <app-sickness-list-card 
+      [imageUrl]="sickness.imageUrl"
+      [requiredDevice]="sickness.requiredDevice"
+      [sicknessName]="sickness.sicknessName"
+      [desc]="sickness.desc"
+      [animationDelay]="getAnimationDelayForCard()"
+    
+      >
+
+      </app-sickness-list-card>
+
+    </div>
+  
+  </div>
+</div>
+</div>

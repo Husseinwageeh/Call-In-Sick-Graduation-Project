@@ -1,0 +1,56 @@
+
+<div class="container">
+  <div
+    *ngIf="!isReadyToVerify()"
+    class="spinner-border custom-spinner text-primary"
+    role="status"
+  ></div>
+
+  <div
+    *ngIf="
+      (isReadyToVerify() && showErrorMessage) || showDeviceNotDetectedMessage
+    "
+    class="alert alert-warning alert-dismissible fade show"
+    role="alert"
+  >
+    <strong>Warning! Session could be closed, {{ alertMessage }}</strong>
+  </div>
+
+  <div *ngIf="isReadyToVerify()" class="alert alert-info" role="alert">
+    {{ authenticationStatesMessages[currentAuthenticationState] }}
+  </div>
+
+  <div *ngIf="!isReadyToVerify()" class="text mt-4">
+    Waiting for initiating connection
+  </div>
+  <div [ngClass]="{ 'cam-box':isOCRRunning}" class="d-flex justify-content-center align-items-center" *ngIf="isReadyToVerify()">
+    <webcam
+      [height]="800"
+      [width]="800"
+      class="web-cam"
+      (imageCapture)="handleImage($event)"
+      [trigger]="triggerObservable"
+    >
+    
+  </webcam>
+  </div>
+  <div  *ngIf="isReadyToVerify()">
+    <div class="buttons m-auto" *ngIf="isReadyToVerify()">
+      <button
+        type="button"
+        class="btn btn-primary rounded-pill"
+        (click)="closeSession(false,'')"
+      >
+        Close Session
+      </button>
+      <button
+        *ngIf="currentAuthenticationState == 2"
+        type="button"
+        class="btn btn-primary rounded-pill"
+        (click)="onTakeMyReadingClicked()"
+      >
+        Take My Reading
+      </button>
+    </div>
+  </div>
+</div>

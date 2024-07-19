@@ -1,0 +1,11 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root{
+    --lightblue:#8FB3DD ;
+    --darker-blue:#0052B2;
+}
+
+body{
+    margin :0;
+    height: 100%;
+}

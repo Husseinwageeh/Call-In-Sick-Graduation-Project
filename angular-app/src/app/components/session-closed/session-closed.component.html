@@ -1,0 +1,13 @@
+
+<div class="container   ">
+    <div *ngIf="isClosedDueToWrongAction"><h1 >Session is terminated due to wrong action</h1>
+        <h4 class="text-center">{{sessionClosingReason}}</h4>
+    </div>
+<div *ngIf="!isClosedDueToWrongAction"><h1  >Session is closed</h1>
+
+</div>
+
+
+<button class="btn btn-primary" (click)="goBackToHealthAuthentication()">Authenticate again</button>
+</div>
+

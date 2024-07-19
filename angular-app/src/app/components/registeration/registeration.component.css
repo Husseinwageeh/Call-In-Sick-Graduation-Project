@@ -1,0 +1,86 @@
+
+.parent{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+     background-color:var(--lightblue) ;
+}
+
+
+.container{
+    position:absolute ;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height: fit-content;
+    padding:20px
+}
+
+.title-heading-color{
+    color:var(--darker-blue)
+}
+.custom-button{
+    color:var(--darker-blue);
+    padding: 5px 40px;
+
+}
+
+.custom-button-2{
+    background-color: var(--darker-blue);
+    color: white;
+    padding: 5px 60px;
+ 
+
+  
+
+}
+.custom-button-2:hover{
+    font-weight: bold;
+    font-weight: 700;
+
+}
+.required-symbol{
+    color:red;
+    
+}
+a{
+    text-decoration: none;
+    color:black;
+    transition: font-size 1s;
+}
+a:hover{
+    font-weight: bold;
+    font-size: 17px;
+    
+
+} 
+
+.main{
+    position:absolute;
+    left:-50%;
+    top:0%;
+    transform:translate(-50%,-50%);
+    transition:all 1s ease-out;
+   
+    
+}
+.main[data-iscard-appeared='true']{
+    left:50%;
+    top:50%
+
+}
+
+
+/* Example custom styles */
+mat-spinner {
+    background-color: transparent; /* Set background color to transparent */
+    width:100px;
+    height: 100px;
+    position:absolute; 
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+
+  }
+  

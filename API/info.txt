@@ -1,0 +1,25 @@
+databaseName=company_system
+steps to follow to run postgres container and  build the schemas
+1- cd api
+2- docker compose up 
+3- db-migrate up
+
+to get into interactive terminal of the container just do the following
+1- docker exec -it [container id] /bin/bash
+2- psql - U postgres(which is the postgres username)
+
+  \l lists all databases
+
+3- \c [databasename=> which is company_system]
+4- \dt to list all the relations built
+
+*Creating migrations => must  be inorder
+
+db-migrate create (add-user) --sql-file
+
+* building schemas
+db-migrate up
+
+
+*destroying schemas
+db-migrate down
